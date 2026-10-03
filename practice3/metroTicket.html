@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro ticketing</title>
+</head>
+<body>
+    <script>
+        let age=8;
+        let gender='male';
+        let discount;
+        let price=100;
+        let finalprice;
+        if(age<=5){
+            discount=price*1;
+        }else if(age>5&&age<=8||gender=='female'){
+            discount=price*0.5;
+        }else if(age>=65){
+            discount=price*0.3;
+        }else{
+            discount=0;
+        }
+
+        finalprice=price-discount;
+        let op=`The actual price ${price}\n The discount price ${discount}\n The final price ${finalprice}`;
+
+        console.log(op);
+
+    </script>
+</body>
+</html>
