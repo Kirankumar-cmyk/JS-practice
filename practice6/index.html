@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dste localStorage DOM</title>
+    <style>
+        .greeting {
+            display: inline;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="greeting"></h3>
+
+    <button onclick="
+   
+   
+   count++;
+   
+    displayCount(count);
+   colorChange(count);
+   ">Click me</button>
+    <p class="btnCount"></p>
+
+    <script>
+
+        let mydate = new Date();
+        let curentHours = mydate.getHours();
+        function grretWithName(name = 'Dear') {
+
+            if (curentHours >= 4 && curentHours < 12) {
+                greeting(`Good morning ${name}`);
+            } else if (curentHours >= 12 && curentHours < 17) {
+                greeting(`Good Afternoon ${name}`);
+            } else if (curentHours >= 20) {
+                greeting(`Good night ${name}`);
+            }
+
+        }
+
+        function greeting(txt) {
+            document.querySelector(".greeting").innerHTML = txt;
+        }
+        grretWithName('Kiran');
+        let count;
+        let local=localStorage.getItem('btncount');
+        count=Number(local)||0;
+        function displayCount(count) {
+            localStorage.setItem('btncount',count);
+            document.querySelector('.btnCount').innerHTML = `Number of counts:${count}`;
+        }
+
+        function colorChange(num){
+            let element=document.querySelector('.btnCount');
+            if(num%2==0){
+                element.classList.remove('yellow');
+                element.classList.add('green');
+            }else{
+                element.classList.remove('green');
+                element.classList.add('yellow');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array and loops
+    </title>
+</head>
+<body>
+    <script>
+        let arr=[5,6];
+        console.log(arr);
+        arr.unshift(4);
+        arr.push(7);
+        console.log(arr);
+        function elementat(i){
+            return arr[i];
+        }
+
+        console.log(elementat(0));
+        let copyarr=[];
+        copyarr=arr.slice(1,4);
+        console.log(copyarr);
+   
+       
+        function isprime(num){
+            for(let i=2;i<num;i++){
+                if(num%i==0){
+                    return false;
+                }
+                
+            }
+            return true;
+           
+        }
+
+        let n=2;
+        let c=1;
+        while(n<14){
+            if(isprime(n)==true&&c<=5){
+                console.log(n);
+                c++;
+            }
+            n++;
+        }
+
+        let num=10;
+        while(num>=1){
+            console.log(num);
+            num--;
+        }
+        let pa=[1,-6,5,7,-98];
+        for(let i=0;i<pa.length;i++){
+            if(pa[i]<0){
+                continue;
+            }else{
+                console.log(pa[i]);
+            }
+
+        }
+        //  pa.toString();
+         console.log(pa);
+        let string='';
+        for(let i=0;i<pa.length;i++){
+            let c=pa[i];
+            string+=c;
+        }
+        console.log(string);
+    </script>
+</body>
+</html>
