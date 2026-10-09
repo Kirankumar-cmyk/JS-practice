@@ -37,7 +37,10 @@
         let n=2;
         let c=1;
         while(n<14){
-            if(isprime(n)==true&&c<=5){
+            if(c==6){
+                break;
+            }
+            if(isprime(n)){
                 console.log(n);
                 c++;
             }
@@ -62,10 +65,11 @@
          console.log(pa);
         let string='';
         for(let i=0;i<pa.length;i++){
-            let c=pa[i];
-            string+=c;
+          
+            string+=pa[i]+' ';
         }
         console.log(string);
+        console.log(pa.join(','));
     </script>
 </body>
 </html>
